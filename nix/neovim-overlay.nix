@@ -84,7 +84,7 @@ with final.pkgs.lib; let
     # ^ bleeding-edge plugins from flake inputs
     which-key-nvim
 
-    base16-nvim
+    mini-base16
   ];
 
   extraPackages = with pkgs; [
