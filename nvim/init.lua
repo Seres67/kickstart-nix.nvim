@@ -48,7 +48,7 @@ opt.showmatch = true -- Highlight matching parentheses, etc
 opt.incsearch = true
 opt.hlsearch = true
 
-opt.spell = true
+opt.spell = false
 opt.spelllang = 'en'
 
 opt.expandtab = true
@@ -66,8 +66,9 @@ opt.cmdheight = 0
 opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 opt.colorcolumn = '100'
 
+opt.showmode = false
+
 opt.termguicolors = true
--- vim.cmd.colorscheme('starlight')
 
 -- Configure Neovim diagnostic messages
 
