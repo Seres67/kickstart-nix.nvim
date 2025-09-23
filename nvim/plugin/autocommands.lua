@@ -146,3 +146,22 @@ vim.api.nvim_create_autocmd('LspAttach', {
 --     end
 --   end,
 -- })
+
+local format_on_save_group = api.nvim_create_augroup('format_on_save', { clear = true })
+api.nvim_create_autocmd('BufWritePre', {
+  group = format_on_save_group,
+  callback = function(args)
+    -- Only format if LSP is attached and supports formatting
+    local clients = vim.lsp.get_clients({ bufnr = args.buf })
+    for _, client in ipairs(clients) do
+      if client.server_capabilities.documentFormattingProvider then
+        vim.lsp.buf.format({
+          bufnr = args.buf,
+          async = false, -- Must be synchronous for BufWritePre
+          timeout_ms = 2000,
+        })
+        break
+      end
+    end
+  end,
+})
