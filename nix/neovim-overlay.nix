@@ -90,6 +90,7 @@ let
     mini-base16
     neo-tree-nvim
     nui-nvim
+    nvim-lspconfig
   ];
 
   extraPackages = with pkgs; [
