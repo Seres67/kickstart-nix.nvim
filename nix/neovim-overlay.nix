@@ -89,6 +89,7 @@ let
 
     mini-base16
     neo-tree-nvim
+    nui-nvim
   ];
 
   extraPackages = with pkgs; [
