@@ -87,10 +87,12 @@ let
     # ^ bleeding-edge plugins from flake inputs
     which-key-nvim
 
+    mini-icons
     mini-base16
     neo-tree-nvim
     nui-nvim
-    nvim-lspconfig
+    # nvim-lspconfig
+    fidget-nvim
   ];
 
   extraPackages = with pkgs; [
