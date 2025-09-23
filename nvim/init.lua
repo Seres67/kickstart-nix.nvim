@@ -5,8 +5,35 @@ local opt = vim.o
 
 -- <leader> key. Defaults to `\`. Some people prefer space.
 -- The default leader is '\'. Some people prefer <space>. Uncomment this if you do, too.
--- vim.g.mapleader = ' '
--- vim.g.maplocalleader = ' '
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+vim.g.have_nerd_font = true
+
+vim.opt.mouse = ''
+
+vim.schedule(function()
+  opt.clipboard = 'unnamedplus'
+end)
+
+opt.breakindent = true
+
+opt.ignorecase = true
+opt.smartcase = true
+
+opt.scrolloff = 10
+
+opt.confirm = true
+
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.hl.on_yank()
+  end,
+})
 
 -- See :h <option> to see what the options do
 
@@ -38,6 +65,9 @@ opt.cmdheight = 0
 
 opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 opt.colorcolumn = '100'
+
+opt.termguicolors = true
+vim.cmd.colorscheme('starlight')
 
 -- Configure Neovim diagnostic messages
 

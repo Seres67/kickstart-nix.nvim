@@ -16,8 +16,8 @@ with final.pkgs.lib; let
 
   # This is the helper function that builds the Neovim derivation.
   mkNeovim = pkgs.callPackage ./mkNeovim.nix {
-      inherit (pkgs-locked) wrapNeovimUnstable neovimUtils;
-    };
+    inherit (pkgs-locked) wrapNeovimUnstable neovimUtils;
+  };
 
   # A plugin can either be a package or an attrset, such as
   # { plugin = <plugin>; # the package, e.g. pkgs.vimPlugins.nvim-cmp
@@ -83,6 +83,8 @@ with final.pkgs.lib; let
     # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
     # ^ bleeding-edge plugins from flake inputs
     which-key-nvim
+
+    base16-nvim
   ];
 
   extraPackages = with pkgs; [
