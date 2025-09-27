@@ -93,6 +93,7 @@ let
     nui-nvim
     # nvim-lspconfig
     fidget-nvim
+    neorg
   ];
 
   extraPackages = with pkgs; [
